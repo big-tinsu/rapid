@@ -1,0 +1,109 @@
+.promotions-holder {
+  max-width: 1024px;
+  margin: 20px auto;
+  padding-bottom: 50px;
+}
+
+.promotions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .promotions-header {
+    padding-left: 24px;
+  }
+  .promotions {
+    gap: 16px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .promotions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+.promotion {
+  height: max-content;
+  width: 300px;
+  border-radius: 10px;
+  background: var(--bc-bg-secondary);
+  border: 1px solid var(--bc-border);
+}
+
+.promotion h3 {
+  color: var(--bc-accent-green);
+}
+
+.promotion p {
+  color: var(--bc-text-secondary);
+}
+
+.promotion .title p {
+  color: var(--bc-text-muted);
+}
+
+@media screen and (min-width: 640px) {
+  .promotion {
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .promotion {
+    width: 400px;
+  }
+}
+
+.promotion img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.promotion-text {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+}
+
+.title h3 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.title p {
+  font-weight: 300;
+}
+
+.description {
+  display: grid;
+  gap: 8px;
+}
+.description p {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.description button {
+  width: fit-content;
+  font-weight: 500;
+  border: 1px solid var(--bc-accent-green);
+  color: var(--bc-accent-green);
+  padding: 3px 12px;
+  border-radius: 20px;
+  transition: all 600ms ease;
+}
+
+.description button:hover {
+  background: var(--bc-accent-green);
+  color: black;
+}

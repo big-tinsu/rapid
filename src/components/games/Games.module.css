@@ -1,0 +1,215 @@
+.container {
+  margin: 0 auto;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  justify-items: center;
+}
+
+.game {
+  min-width: 98px;
+  max-width: 211px;
+  height: 110px;
+  border-radius: 8px;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.jackpotBanner {
+  width: max-content;
+  min-width: 80px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 6px 2px 3px;
+  background: #faa100;
+  box-shadow: 0 5px 20px #ffffff;
+  border-radius: 0 0 5px 0;
+  z-index: 2;
+}
+
+.jackpotBanner p {
+  color: white;
+  font-size: 10px;
+  animation: zoom 2s ease-in-out;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.25);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: translate(1);
+  }
+}
+
+.noMatchFound {
+  margin-top: 40px;
+}
+
+.noMatchFoundButton {
+  width: 150px;
+  margin: auto;
+}
+
+.gameContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.gameWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.gameSkeleton {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: rgb(241 245 249);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.gameBtns {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 10px;
+  place-content: center;
+  position: absolute;
+  top: -10px;
+  border-radius: 8px;
+  z-index: 2;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.demo,
+.live {
+  color: #fff;
+  width: 180px;
+  text-transform: capitalize;
+  padding: 4px 12px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.demo {
+  background: transparent;
+  border: 0.5px solid #16825d;
+}
+
+.live {
+  background: #16825d;
+  border: none;
+}
+
+.live:disabled,
+.demo:disabled {
+  cursor: not-allowed;
+}
+
+.ctaPlay,
+.ctaDemo {
+  color: white;
+}
+
+/* Media Queries */
+@media screen and (min-width: 1400px) {
+  .game {
+    width: 256px;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .game {
+    width: 240px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .games {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 16px 0;
+  }
+  .game {
+    min-width: 178px;
+    max-width: 256px;
+    height: 165px;
+  }
+}
+
+@media screen and (width: 768px) {
+  .games {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 16px;
+  }
+
+  .game {
+    width: 160px;
+    height: 165px;
+  }
+}
+
+@media screen and (max-width: 766px) and (min-width: 400px) {
+  .games {
+    padding: 16px 0;
+    justify-items: stretch;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .games {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 959.95px) {
+  .demo,
+  .live {
+    width: 100%;
+  }
+
+  .demo {
+    font-size: 10px;
+  }
+  .gameBtns {
+    height: 140px;
+  }
+} 

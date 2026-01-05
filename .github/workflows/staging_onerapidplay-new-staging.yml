@@ -1,0 +1,63 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy container app to Azure Web App - onerapidplay-new-staging
+
+on:
+  push:
+    branches:
+      - staging
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read #This is required for actions/checkout
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to container registry
+        uses: docker/login-action@v2
+        with:
+          registry: shacksevoregterycontainer.azurecr.io/
+          username: ${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_EBB43C4F83D84BECA9AB97D11267A472 }}
+          password: ${{ secrets.AZUREAPPSERVICE_CONTAINERPASSWORD_44C2C298CA8C49A1A573EEAE3C4B82A8 }}
+
+      - name: Build and push container image to registry
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: shacksevoregterycontainer.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_EBB43C4F83D84BECA9AB97D11267A472 }}/shacks-evolution/onerapidplay-new:${{ github.sha }}
+          file: ./Dockerfile
+
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write #This is required for requesting the JWT
+      contents: read #This is required for actions/checkout
+
+    needs: build
+    
+    steps:
+      
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5A0FB324E6F940F2B6F32D0C81D38DF9 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_574F4B95CAB444C497755A7A31559782 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_2FA71F2E02DA4EFBACF106DC5BB9CFFF }}
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'onerapidplay-new-staging'
+          slot-name: 'Production'
+          images: 'shacksevoregterycontainer.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_EBB43C4F83D84BECA9AB97D11267A472 }}/shacks-evolution/onerapidplay-new:${{ github.sha }}'
+          

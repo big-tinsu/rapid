@@ -1,0 +1,44 @@
+{
+  "name": "onerapidplay_fe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pm2": "pm2 start npm --name \"ONERAPIDPLAY_NEW\" -- start",
+    "restart": " yarn && yarn build && pm2 restart ONERAPIDPLAY_NEW"
+  },
+  "dependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "axios": "^1.6.0",
+    "classnames": "^2.5.1",
+    "crypto-js": "^4.2.0",
+    "js-cookie": "^3.0.5",
+    "monnify-js": "^1.0.2",
+    "motion": "^12.10.0",
+    "next": "14.2.26",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-joyride": "^2.9.3",
+    "react-loading-skeleton": "^3.5.0",
+    "react-phone-input-2": "^2.15.1",
+    "react-select": "^5.10.1",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.0.0",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.0",
+    "@types/js-cookie": "^3.0.6",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "14.2.26",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
+  }
+}

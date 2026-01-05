@@ -1,0 +1,66 @@
+.categories {
+  width: 100%;
+  background: rgba(51, 54, 62, 0.4);
+  padding: 8px 15px;
+  border-radius: 1rem;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  overflow-x: scroll;
+  margin-top: 10px;
+}
+
+/* The progress container (grey background) */
+.progressContainer {
+  width: 100%;
+  height: 6px;
+  border-radius: 8px;
+  background: #f1f1f1;
+}
+
+/* The progress bar (scroll indicator) */
+.progressBar {
+  height: 6px;
+  width: 50%;
+  background: #faa100;
+  border-radius: 8px;
+}
+
+.customScrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  /* background-color: #faa100; */
+  background: none;
+}
+/* Track */
+.customScrollbar::-webkit-scrollbar-track {
+  /* border-radius: 8px;
+  background: #f1f1f1; */
+  background: none;
+}
+/* Handle */
+.customScrollbar::-webkit-scrollbar-thumb {
+  /* @apply bg-opacity-95 rounded-lg;
+  background: #faa100; */
+  background: none;
+}
+
+.categoryItem {
+  cursor: pointer;
+  flex: 0 0 auto;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.active {
+  background: rgba(22, 25, 35, 0.8);
+}
+
+.inputWrapper {
+  background: #fff;
+  border-radius: 4px;
+  padding: 3px 7px;
+  width: 100%;
+} 

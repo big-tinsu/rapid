@@ -1,0 +1,494 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  /* Font variables will be set automatically by the GeistSans and GeistMono components */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.avatar-img {
+  @apply h-10 w-10 border-white p-3 shadow-sm rounded-full border-2;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+a {
+  @apply font-Exo;
+} */
+
+html {
+  background-color: #161923;
+}
+
+.avatar-img {
+  background-position: center;
+  background-color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.action-norm {
+  @apply py-2 px-4 rounded text-base;
+}
+
+.action-filled {
+  background-color: #faa100;
+  border-color: #faa100;
+  border-width: 1px;
+}
+
+.action-filled2 {
+  background-color: #0d142f;
+  border-color: #0d142f;
+  border-width: 1px;
+}
+
+.action-filled {
+  @apply hover:ring-4 hover:ring-[#FD7D00];
+}
+
+.action-log {
+  @apply bg-[#0A81FA] text-gray-100 px-8 mt-4 font-semibold text-sm focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50;
+}
+
+.action-log:hover {
+  background-color: rgba(10, 129, 250, 80%);
+  --tw-bg-opacity: 1;
+}
+
+.bd-color {
+  background-color: #161923;
+}
+
+.pad {
+  @apply px-4;
+}
+
+.card-bg {
+  background: url("../../public/assets/images/temp_logo.png");
+}
+
+.card {
+  @apply px-8 py-12 min-h-[228px] bg-opacity-50;
+}
+
+.card {
+  background-color: wheat;
+  box-shadow: inset;
+  /* background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%); */
+  border-radius: 8px;
+  /* padding: 20px; */
+  /* margin: auto; */
+}
+
+.card-img {
+  background-position: center;
+  background-size: cover;
+  -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+  filter: blur(2px);
+}
+
+.h-cta {
+  width: fit-content;
+}
+
+.h-cta {
+  @apply px-10 py-4 bg-white text-sm rounded mt-4;
+}
+
+.game-circle {
+  /* background: url("https://cdn.dribbble.com/users/2416124/screenshots/15122838/media/d1357c44cca0cb9098be064b2d06a984.png"); */
+  height: 90px;
+  width: 90px;
+  align-self: flex-end;
+  border-radius: 999px;
+  background-position: center;
+  background-size: cover;
+  margin-top: 1rem;
+  padding: 8px;
+  border: 6px solid #7e71cc;
+}
+
+.games-card {
+  background-position: center;
+  background-size: cover;
+}
+
+.content-table td {
+  @apply text-gray-500;
+}
+
+.content-table thead tr {
+  /* @apply bg-buslybg; */
+}
+
+.winnings-clr {
+  font-weight: bold;
+  color: #faa100 !important;
+}
+
+.winnings-red {
+  font-weight: bold;
+  color: #fa0000 !important;
+}
+
+.winnings-green {
+  font-weight: bold;
+  color: #00fa4b !important;
+}
+
+.winnings-user {
+  color: white !important;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.howtoplay {
+  align-items: center;
+  padding: 20px;
+}
+.howtoplay h4 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+}
+.howtoplay p {
+  color: #faa100;
+}
+.howtoplay span {
+  color: #ffffff;
+}
+.howtoplay-list-text {
+  padding: 10px;
+}
+
+.howtoplay-header {
+  align-items: center;
+  text-align: center;
+}
+
+.howtoplay-footer {
+  font-style: italic;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.howtoplay-footer p {
+  color: #ffffff;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #0f0f0f;
+  margin: 50% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 95%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content {
+  @apply flex rounded-2xl;
+}
+
+.blur-cov {
+  @apply absolute w-full h-full;
+}
+
+.blur-cov {
+  z-index: 1;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgb(245 245 245 / 36%);
+}
+
+/* Safari 7.1+ */
+
+/* _::-webkit-full-page-media, _:future, :root .drop-text {
+
+  
+} */
+
+@media only screen and (min-width: 992px) {
+  .pad {
+    @apply px-14;
+  }
+  .modal-content {
+    width: 50%; /* Could be more or less, depending on screen size */
+    margin: 10px auto;
+  }
+}
+
+.tabs-log-seun {
+  margin: 9px 0px;
+  border-radius: 14px;
+  width: auto;
+  background-color: #151718;
+  padding: 6px;
+}
+
+.footer p {
+  @apply text-xs text-gray-500 text-left;
+}
+
+.tab-log-button {
+  outline: none !important;
+}
+
+.tab-log-button {
+  @apply outline-none py-2 px-8 border-none text-xs bg-none text-gray-100;
+}
+
+.tab-log-button.active {
+  background-color: #232526;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 17px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 17px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 17px -8px rgba(0, 0, 0, 0.75);
+}
+/* 
+.tab-log-button.active {
+  @apply transition-all;
+} */
+
+.popout {
+  animation: popout linear 1;
+  transform: scale(0);
+}
+
+.popin {
+  animation: popin linear 1;
+  -webkit-animation: popin linear 1;
+  transform: scale(1);
+}
+
+.form-group {
+  @apply flex flex-col mb-4;
+}
+.form-group label {
+  @apply mb-1 text-gray-400 text-base;
+}
+.form-group.error label {
+  @apply text-red-500;
+}
+.form-input {
+  /* @apply bg-[#161923] border-none rounded focus:ring-4 focus:ring-[#424344] focus:text-gray-200 text-gray-400; */
+  @apply w-full h-10 px-2 text-black border border-black  bg-[#ffffff] outline-none focus:ring-2 focus:ring-[#faa100] focus:border-[#faa100] rounded-lg transition ease-in-out;
+}
+
+/* The Close Button */
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+  color: whitesmoke;
+  background: crimson;
+  border-radius: 100%;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: transparent;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 100%;
+  right: 0px;
+  height: fit-content;
+}
+
+.dropdown-content {
+  @apply mt-1 rounded-md lg:mt-0 min-h-[320px] lg:min-h-[240px];
+}
+
+.dropdown-inner :where(button, hr, span) {
+  @apply px-4;
+}
+
+.dropdown-inner :where(button) {
+  @apply mx-4;
+}
+
+.dropdown-inner :where(a) {
+  @apply mx-2 px-2 mb-1 hover:!bg-gray-700 hover:!rounded-md hover:!bg-opacity-30;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  display: block;
+  z-index: 99;
+}
+
+.dropdown-content a {
+  @apply text-gray-200 text-xs font-medium lg:font-normal lg:text-xs py-3 flex items-baseline;
+}
+
+.dropdown-content svg {
+  @apply mr-5 lg:mr-3;
+}
+
+.dropdown:hover .dropdown-content {
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0.5em;
+}
+.dropdown {
+  position: relative;
+  display: inline;
+}
+.dropdown:after {
+  content: dropdown-content;
+  width: 0;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.dropdown:after {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 100%;
+  right: 0px;
+  height: fit-content;
+}
+
+.dropdown-bg {
+  @apply bg-[#f1f1f1];
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.router-link-exact-active {
+  @apply !bg-gray-800 rounded-md !font-semibold !bg-opacity-30 shadow-sm !text-white;
+}
+
+.three-bg-circular {
+  @apply rounded-full blur-sm bg-gray-600 bg-opacity-10 px-20 z-10 absolute h-64 w-64;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #bad7f20d;
+}
+
+.screen-margin-bottom {
+  margin-bottom: 60px;
+}
+
+/**
+* ANIMATIONS
+*/
+
+@keyframes popin {
+  from {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes popin {
+  from {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes popout {
+  from {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+

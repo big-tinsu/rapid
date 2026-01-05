@@ -1,0 +1,101 @@
+.indicators {
+  display: flex;
+  position: absolute;
+  bottom: 8px;
+  z-index: 10;
+}
+
+.indicatorWrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 4px;
+}
+
+.indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #faa100;
+  z-index: 0;
+}
+
+.indicator:hover {
+  background: #faa100;
+}
+
+.indicator.active {
+  background: #faa100;
+}
+
+.ctrlBtns {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.prevImage {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translate(-50%, 0px);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(128, 128, 128, 0.3);
+  z-index: 11;
+}
+
+.nextImage {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(128, 128, 128, 0.3);
+  z-index: 11;
+}
+
+.prevImage:hover,
+.nextImage:hover {
+  color: #faa100;
+}
+
+@media screen and (min-width: 1000px) {
+  .indicators {
+    bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .indicators {
+    display: none;
+  }
+  .prevImage,
+  .nextImage {
+    top: 35%;
+  }
+
+  .prevImage {
+    left: 20px;
+  }
+
+  .nextImage {
+    right: 0px;
+  }
+}
