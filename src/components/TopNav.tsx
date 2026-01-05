@@ -110,17 +110,17 @@ export function TopNav({ sidebarCollapsed }: TopNavProps) {
               </div>
 
               <button
-                onClick={handleDepositClick}
+                onClick={() => setWithdrawModalOpen(true)}
                 className='bc-button-primary py-2 px-5 text-sm'
               >
-                Deposit
+                Withdraw
               </button>
 
               <button
-                onClick={() => setWithdrawModalOpen(true)}
+                onClick={handleDepositClick}
                 className='py-2 px-5 text-sm bg-[var(--bc-bg-secondary)] text-white rounded-lg hover:bg-[var(--bc-border)] transition-colors font-medium'
               >
-                Withdraw
+                Deposit
               </button>
 
               <button
@@ -162,9 +162,9 @@ export function TopNav({ sidebarCollapsed }: TopNavProps) {
           <Image
             src="/assets/images/white_logo.png"
             alt="OneRapidPlay"
-            width={110}
-            height={28}
-            className="object-contain h-7 w-auto"          />
+            width={80}
+            height={20}
+            className="object-contain h-5 w-auto"          />
         </Link>
 
         <div className='flex items-center gap-1.5'>

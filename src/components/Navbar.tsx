@@ -306,7 +306,7 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={iframeLink ? closeGame : () => router.push("/")}
-            className="block w-[152px]"
+            className="block w-[100px] sm:w-[120px]"
           >
             <img
               src="/assets/images/white_logo.png"
@@ -314,7 +314,7 @@ export default function Navbar() {
               alt="Logo"
               width={60}
               height={40}
-              className="w-full"
+              className="w-full h-auto"
             />
           </Link>
         </div>

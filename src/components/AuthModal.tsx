@@ -218,8 +218,8 @@ export function AuthModal({ isOpen, onClose, initialMode = 'signin' }: AuthModal
       />
 
       {/* Modal */}
-      <div className='fixed inset-2 sm:inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-auto md:w-full md:max-w-4xl z-50 overflow-y-auto max-h-[calc(100vh-16px)] sm:max-h-[calc(100vh-32px)] md:max-h-[90vh]'>
-        <div className='bg-[var(--bc-bg-secondary)] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl min-h-full md:min-h-0'>
+      <div className='fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4'>
+        <div className='relative bg-[var(--bc-bg-secondary)] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl w-full max-w-4xl max-h-[calc(100vh-16px)] sm:max-h-[calc(100vh-32px)] md:max-h-[90vh] overflow-y-auto'>
           {/* Close Button */}
           <button
             onClick={onClose}
@@ -229,7 +229,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'signin' }: AuthModal
           </button>
 
           {/* Two Column Layout */}
-          <div className='grid grid-cols-1 lg:grid-cols-2 min-h-[450px] sm:min-h-[500px] lg:min-h-[580px]'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 lg:min-h-[580px]'>
             {/* Left Column - Image (hidden on mobile) */}
             <div className='relative hidden lg:block bg-[#1a1d1f]'>
               {/* Background Image */}
@@ -283,26 +283,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'signin' }: AuthModal
             </div>
 
             {/* Right Column - Forms */}
-            <div className='p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col overflow-y-auto max-h-[calc(100vh-32px)] sm:max-h-[calc(90vh-32px)] lg:max-h-[580px]'>
-              {/* Mobile promo banner (shown only on mobile) */}
-              <div className='lg:hidden mb-2 sm:mb-3 p-2 sm:p-3 bg-gradient-to-r from-[#1a2c1a] to-[#1a2520] rounded-lg sm:rounded-xl'>
-                <h3 className='text-white font-bold text-xs sm:text-sm mb-1'>Stay Untamed</h3>
-                <div className='flex flex-wrap gap-2 sm:gap-3 text-[10px] sm:text-xs'>
-                  <span className='flex items-center gap-1'>
-                    <span className='text-[var(--bc-accent-green)] font-bold'>470%</span>
-                    <span className='text-white/80'>Bonus</span>
-                  </span>
-                  <span className='flex items-center gap-1'>
-                    <span className='text-[var(--bc-accent-green)] font-bold'>5 BTC</span>
-                    <span className='text-white/80'>Lucky spin</span>
-                  </span>
-                  <span className='flex items-center gap-1'>
-                    <span className='text-[var(--bc-accent-green)] font-bold'>Free</span>
-                    <span className='text-white/80'>Perks</span>
-                  </span>
-                </div>
-              </div>
-
+            <div className='p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col overflow-y-auto lg:max-h-[580px]'>
               {/* Logo - only on mobile/tablet, hidden on desktop since it's on left panel */}
               <div className='flex items-center gap-2 mb-2 sm:mb-3 lg:hidden'>
                 <Image

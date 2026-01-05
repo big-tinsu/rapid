@@ -20,7 +20,7 @@ export default function AuthNavbar() {
               <img
                 src="/assets/images/white_logo.png"
                 alt="Logo"
-                className="h-5"
+                className="h-4 sm:h-5 w-auto"
               />
             </Link>
           </div>
